@@ -32,7 +32,8 @@ router.post("/webhook", (req, res) => {
     if (hash == req.headers['x-paystack-signature']) {
         // Retrieve the request's body
         const event = req.body;
-        
+        console.log(event)
+
         //console.log(req.body.event);
         //console.log(req.body.data.status)
         //console.log(req.body.data.customer.email)
