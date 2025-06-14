@@ -1,0 +1,92 @@
+
+  
+  body {
+      margin: 40px;
+    }
+    
+  .box {
+    display: block;
+    margin: auto;
+    background-color: #faefef;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 100%;
+    grid-area: box;
+    box-shadow: 1rem 1rem 1rem #6684a7;
+    padding: .5rem;
+    font-size: 150%;
+    color: rgb(26, 6, 6);
+    width: 340px;
+    height: 650px;
+    place-items: center;
+    }
+  
+  
+  .form {
+    margin-left: 10px;
+    margin-right: 10px
+    }
+  
+  .form-title {
+  font-size: 35px;
+  }
+  
+  .form-info {
+    font-size: 25px;
+    text-align: justify;
+    text-justify: auto;
+  }
+  
+  
+  input[type="email"] {
+      width: 320px;
+      height: 40px;
+      margin-bottom: 8px;
+      margin-top: 40px;
+      font-size: medium;
+    }
+  input[type="password"] {
+    width: 320px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: medium;
+  }
+
+  input[type="number"] {
+    width: 320px;
+    height: 40px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+    font-size: medium;
+  }
+  
+  .help {
+    font-size: medium;
+  
+  }
+  
+  #passwordRecovery{
+    margin-top: 40px;
+
+  }
+  
+  #otpResend{
+    margin-top: 40px;
+    margin-left: 60px;
+  }
+
+
+  .login {
+    width: 320px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(103, 87, 118);
+    border: none;
+    margin-top: 50px;
+  }
+  
+  
+  

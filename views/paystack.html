@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paystack Popup Example</title>
+  <script src="https://js.paystack.co/v2/inline.js"></script>
+</head>
+<body>
+  <button id="payButton">Pay with Paystack</button>
+
+  <script>
+    const paystackInstance = new PaystackPop();
+
+    const onSuccess = (transaction) => {
+      console.log('Successful transaction:', transaction);
+      alert(`Successful! Ref: ${transaction.reference}`);
+    };
+
+    const onClose = () => {
+      console.log('Transaction closed.');
+    };
+
+    document.getElementById('payButton').addEventListener('click', () => {
+      paystackInstance.newTransaction({
+        key: 'pk_test_5cc6223594aa9a8dc29e8b6574b6efba0aa79e72',
+        email: 'dot@example.com',
+        amount: 10000,
+        onSuccess: onSuccess,
+        onClose: onClose
+      });
+      paystackInstance.openIframe();
+    });
+  </script>
+</body>
+</html>

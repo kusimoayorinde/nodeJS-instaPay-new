@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+    
+</head>
+<body>
+      
+    <div class="gridContainer">
+
+        <div class="header" id="cells">
+            <h1>Welcome, <%=firstName%> <%=lastName%></h1>
+        </div>
+        
+        <div class="navigator" id="cells">
+            <a href="#" class="fa-solid fa-house fa-bounce"> Dashboard</a>
+            <a href="#" class="fa-solid fa-sd-card fa-bounce"> Airtime</a>
+            <a href="#" class="fa-solid fa-wifi fa-bounce"> Data</a>
+            <a href="#" class="fa-solid fa-sd-card fa-plug-circle-bolt fa-bounce"> Electricity</a>
+            <a href="#" class="fa-solid fa-satellite fa-bounce"> TV/Dish/Satelite</a>
+            <a href="#" class="fa-solid fa-credit-card fa-bounce"> Scratch Cards</a>
+            <a href="#" class="fa-solid fa-user fa-bounce"> Account</a>
+            <a href="#" class="fa-solid fa-circle-info fa-bounce"> Help/Support</a>
+            <a href="#" class="fa-solid fa-address-book fa-bounce fa-phone-office"> Contacts</a>
+            <a href="/" class="fa-solid fa-right-from-bracket fa-bounce"> Logout</a>
+        </div>
+
+        <div class="banner-advert" id="cells">
+            <div class="banner">
+                <img src="/images/banner1.jpg" alt="aaa" width="400" height="140">
+            </div>
+            <div class="banner">
+                <img src="/images/banner2.jpg" alt="aaa" width="400" height="140">
+            </div>
+            <div class="banner">
+                <img src="/images/banner3.jpg" alt="aaa" width="400" height="140">
+            </div>
+        </div>
+
+        <div class="membership" id="cells">
+            <p1 class="membership_text">Member Since: <%=registrationDate%></p1>
+        </div>
+        
+        <div class="wallet" id="cells">
+            <P>WALLET</P>
+            <p>Balance (Naira): <%=walletBalance%></P>
+            <button type="button" id="fundButton" class="fundWallet" onclick="openForm()">Fund Wallet</button>
+
+        </div>
+        <div class="loyalty" id="cells">
+            <p>LOYALTY POINTS</p>
+                <p class="loyalty_1">Available Points: <%=availablePoints%></p>
+                <p class="loyalty_2">Total Points Earned: <%=totalPoints%></p>
+
+        </div>
+        <div class="referal" id="cells">
+            <p class="referal_1">Number of Referals:</p>
+            <p class="referal_2">Referal Points:</p>
+            <button type="button" class="myreferals">My Referals</button>
+        </div>
+        <div class="footer" id="cells">Eight</div>
+    </div>
+
+    <div class="form-popup" id="fundingForm">
+        <form action="" class="form-container">
+        <h1>Fund Your Wallet</h1>
+
+        <label for="Amount"><b>Amount</b></label>
+        <input type="number" id="amount" placeholder="Enter Amount" name="Amount" required>
+
+    <button type="button" id="btn" class="btn">Fund Wallet</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+    <script>
+
+        function openForm() {
+            document.getElementById("fundingForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("fundingForm").style.display = "none";
+        }
+
+
+
+        const paystackInstance = new PaystackPop();
+
+        const onSuccess = (transaction) => {
+            console.log('Successful transaction:', transaction);
+            alert(`Successful! Ref: ${transaction.reference}`);
+        };
+
+        const onClose = () => {
+            console.log('Transaction closed.');
+        };
+
+        document.getElementById('btn').addEventListener('click', () => {
+            paystackInstance.newTransaction({
+                
+                key: 'pk_test_5cc6223594aa9a8dc29e8b6574b6efba0aa79e72',
+                email: '<%=email%>',
+                amount: document.getElementById("amount").value * 100,
+                onSuccess: onSuccess,
+                onClose: onClose
+            });
+            paystackInstance.openIframe();
+        });
+
+    </script>
+    
+</body>
+</html>

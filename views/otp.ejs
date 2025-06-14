@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="../style/otp.css">
+</head>
+<body>
+    <div class="box">
+        <form action="/otp" method="POST" class="form">
+            <h1 class="form-title">Email Verification</h1>
+            <p class="form-info">A whole new world is a click away</p>
+           
+            <div class="form-aspect">
+              <input type="email" id="email" name="email" value="<%=email%>" readonly required>
+              <label for="email" class="form-label"></label>
+            </div>
+            
+            <button type="submit" class="activate">Send OTP</button>
+          </form>
+    </div>
+    
+</body>
+</html>

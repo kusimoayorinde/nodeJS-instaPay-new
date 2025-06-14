@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset</title>
+    <link rel="stylesheet" href="../style/reset2.css">
+</head>
+<body>
+    <div class="box">
+        <form action="/reset2" method="POST" class="form">
+            <h1 class="form-title">Password Reset</h1>
+            <p class="form-info">A whole new world is a click away</p>
+           
+            <div class="form-aspect">
+              <input type="number" id="otp" name="otp" placeholder="OTP" required>
+              <label for="OTP" class="form-label"></label>
+            </div>
+
+            <div class="form-aspect">
+              <input type="password" id="password" name="pwd" placeholder="Password" required>
+              <label for="Password" class="form-label"></label>
+            </div>
+
+            <div class="form-aspect">
+              <input type="password" id="password" name="Confirm Password" placeholder="Password" required>
+              <label for="Confirm Password" class="form-label"></label>
+            </div>
+            
+            <button type="submit" class="reset">Reset Password</button>
+          </form>
+    </div>
+    
+</body>
+</html>

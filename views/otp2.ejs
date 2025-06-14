@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="../style/otp.css">
+</head>
+<body>
+    <div class="box">
+        <form action="/otp2" method="POST" class="form">
+            <h1 class="form-title">Account Verification</h1>
+            <p class="form-info">To activate your account<br>
+              enter the OTP sent to your<br>
+              registered email into the box<br>
+              below:</p>
+           
+            <div class="form-aspect">
+              <input type="number" id="otp" name="otp" placeholder="OTP" required>
+              <label for="otp" class="form-label"></label>
+            </div>
+            
+            <button type="submit" class="activate">Activate Account</button>
+          </form>
+    </div>
+    
+</body>
+</html>

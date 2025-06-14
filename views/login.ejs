@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instaPay</title>
+    <link rel="stylesheet" href="../style/index.css">
+</head>
+<body>
+    <div class="splash">
+        <h1 class="fade-in">instaPay</h1>
+    </div>
+
+        <div class="box">
+            <form action="/login" method="POST" class="form">
+                <h1 class="form-title">Login to instaPay</h1>
+                <p class="form-info">A whole new world is a click away</p>
+               
+                <div class="form-aspect">
+                  <input type="email" id="email" name="email" placeholder="Email Address" required>
+                  <label for="email" class="form-label"></label>
+                </div>
+                
+                <div class="form-aspect">
+                  <input type="password" id="password" name="pwd" placeholder="Password" required>
+                  <label for="password" class="form-label"></label>
+                </div>
+      
+                <div class="help">
+                  <a href="/reset" id="forgetPassword">Forgot password</a>
+                  <p id="linkSpacing"></p>
+                  <a href="/register" id="register">New User (Register)</a>
+                </div>
+                
+                <button class="login">Login</button>
+              </form>
+        </div>
+
+      <script src="../js/splash.js"></script>
+    
+</body>
+</html>
